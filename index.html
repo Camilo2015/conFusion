@@ -135,7 +135,7 @@
                         
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                             <input id="date" type="text" class="form-control" name="date" placeholder="Date">
+                             <input id="date1" type="text" class="form-control" name="date" placeholder="Date">
                             </div>
                         
                         </dd>
@@ -143,7 +143,7 @@
                         
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
-                             <input id="date" type="text" class="form-control" name="date" placeholder="Time">
+                             <input id="date2" type="text" class="form-control" name="date" placeholder="Time">
                             </div>
 
                         
@@ -223,6 +223,12 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -297,7 +303,7 @@
                         
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                             <input id="date" type="text" class="form-control" name="date" placeholder="Date">
+                             <input id="date3" type="text" class="form-control" name="date" placeholder="Date">
                             </div>
                         
                         </dd>
@@ -370,7 +376,9 @@
 
 
  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--<script>
@@ -378,6 +386,28 @@
         $('[data-toggle="tooltip"]').tooltip();
          });
     </script>-->
+    <script>
+        jQuery(document).ready(function($){
+            $("#mycarousel").carousel( {
+                interval: 3000 
+            } ); 
+            $("#carouselButton").click(function(){ 
+                if ($("#carouselButton").children("span").hasClass('fa-pause'))
+               {
+                $("#mycarousel").carousel('pause');
+                $("#carouselButton").children("span").removeClass('fa-pause'); 
+                $("#carouselButton").children("span").addClass('fa-play');
+               } 
+               else  if ($("#carouselButton").children("span").hasClass('fa-play')){
+                 $("#mycarousel").carousel('cycle'); 
+                 $("#carouselButton").children("span").removeClass('fa-play');
+                 $("#carouselButton").children("span").addClass('fa-pause');  
+
+               }
+            }); 
+            
+        }); 
+    </script>
 </body>
 
 </html>
