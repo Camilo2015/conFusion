@@ -17,7 +17,7 @@
 .jumbotron{
 	padding: 70px 30px 70px 30px;
 	margin: 0px auto;
-	background: #9575CD; 
+	background: #9575CD !important; 
 	color: floralwhite;
 }
 .adress{
@@ -56,10 +56,4 @@ body{
 }
 .modal{
 	color:#292b2c;
-}
-
-#carouselButton{
-	right:0px;
-	position: absolute;
-	bottom:0px;
 }
